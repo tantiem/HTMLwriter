@@ -59,9 +59,9 @@ class BaseXMLobj:
             for i in range(len(children)):
                 curChild = children[i]
                 try:
-                    childContent += makeTag(curChild.tag, curChild.props, curChild.content, curChild.children,
-                                            self.indent + gBaseIndent)
+                    childContent += makeTag(curChild.tag, curChild.props, curChild.content, curChild.children, self.indent + gBaseIndent)
                 except AttributeError:
+                    #The child does not inherit from BaseXMLObj
                     childContent += children[i]
                 childContent += ""
             self.content += childContent
@@ -141,12 +141,12 @@ def buildSite(head,body,file):
     file = open(file, "w+")
     file.write("<!DOCTYPE html>\n")
     file.write("<html>\n")
-    file.write("    <head>\n")
+    file.write("  <head>\n")
     file.write(head.returnContent())
-    file.write("    </head>\n")
-    file.write("    <body>\n")
+    file.write("  </head>\n")
+    file.write("  <body>\n")
     file.write(body.returnContent())
-    file.write("    </body>\n")
+    file.write("   </body>\n")
     file.write("</html>\n")
     file.close()
 

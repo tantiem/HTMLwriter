@@ -1,0 +1,23 @@
+/*
+accentcolor = #e9e9e9
+primaryfont = Roboto
+secondaryfont = monospace
+default spacing = 10% 0
+*/
+p {
+    margin: [default spacing];
+    padding: [default spacing];
+    font-family: [primaryfont];
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: [primaryfont];
+}
+
+.accent{
+    background-color: [accentcolor];
+}
+
+.accent * {
+    font-family: [secondaryfont]
+}
