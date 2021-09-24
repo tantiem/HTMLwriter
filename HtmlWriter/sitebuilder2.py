@@ -11,8 +11,7 @@ head.setBasicMeta("Levi Reynolds", "My first htmlbuildlib site", "description", 
 body.addXML(h1)
 body.addXML(h1)
 
-for i in range (15):
-    body.addXML(h1)
+
 
 def double_para(para1,para2,bodyObj):
     bodyObj.addXML(makeTag("p","",para1))
@@ -26,4 +25,4 @@ header(body)
 
 double_para("Bruh i am the first paragraph bro","Dog look at me im the second paragraph",body)
 header(body)
-buildSite(head, body, "index.html")
+buildSite(head, body, "index2.html")

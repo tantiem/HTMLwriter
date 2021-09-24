@@ -40,7 +40,7 @@
 
 #Globals for base document
 #Globals cover a wide range of possible site wide colors, fonts, or even text gen settings.
-gBaseIndent = 2
+gBaseIndent = 5
 
 #A base functional class for all other custom classes to inherit
 #The order for all object making is tag, props, content, children
@@ -88,6 +88,9 @@ class Head(BaseXMLobj):
         content += f"<meta name=\"author\" content=\"{author}\">\n"
         content += makeTag("title","",f"{title}")
         self.content += content
+
+    def addExtraMeta(self,content):
+        pass
 
 
 
@@ -149,6 +152,23 @@ def buildSite(head,body,file):
     file.write("   </body>\n")
     file.write("</html>\n")
     file.close()
+
+'''
+htmlOutline = [
+        f"<!DOCTYPE html>",
+        f"<html>",
+        f"{gBaseIndent}<head>",
+        f"{head.returnContent()}",
+        f"</head>",
+        f"\t<body>",
+        f"{body.returnContent()}",
+        f"\t</body>",
+        f"</html>"
+    ] 
+'''
+
+#Better idea for spacing formatting: Just go over all the text afterwards, and indent like an normal person
+#would. every < increases the multiplier, /> would decrease
 
 
 
